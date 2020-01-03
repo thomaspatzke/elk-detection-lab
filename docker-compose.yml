@@ -1,0 +1,29 @@
+version: "3"
+services:
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+        environment:
+            discovery.type: single-node
+            indices.query.bool.max_clause_count: 4000
+        ports:
+            - "9200:9200"
+        networks:
+            - elastic
+    kibana:
+        image: docker.elastic.co/kibana/kibana:7.5.1
+        ports:
+            - "5601:5601"
+        networks:
+            - elastic
+        depends_on:
+            - elasticsearch
+    loader:
+        build: .
+        volumes:
+            - .:/datasets
+        networks:
+            - elastic
+        depends_on:
+            - elasticsearch
+networks:
+    elastic:

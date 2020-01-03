@@ -1,0 +1,9 @@
+[submodule "mordor"]
+	path = mordor
+	url = https://github.com/hunters-forge/mordor
+[submodule "EVTX-ATTACK-SAMPLES"]
+	path = EVTX-ATTACK-SAMPLES
+	url = https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES
+[submodule "evtx2es"]
+	path = evtx2es
+	url = https://github.com/thomaspatzke/evtx2es
