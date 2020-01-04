@@ -2,6 +2,7 @@
 
 case "$1" in
     init)
+        docker-compose build
         docker-compose up
         ;;
     run)
