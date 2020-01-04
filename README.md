@@ -39,6 +39,6 @@ After this was run once, the ELK environment can be started without importing th
 
 ## Usage
 
-Open the [local Kibana](https://localhost:5601) in your browser. The data
+Open the [local Kibana](http://localhost:5601/app/kibana#/discover) in your browser. The data
 starts in November 2018 and the field naming follows the ECS scheme and
 Winlogbeat 7 conventions.
