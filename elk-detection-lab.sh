@@ -2,8 +2,11 @@
 
 case "$1" in
     init)
+        echo "Unpacking malware-traffic-analysis.net data..."
+        bunzip2 -k malware-traffic-analysis.net/eve.json.bz2
         docker-compose build
         docker-compose up
+        rm malware-traffic-analysis.net/eve.json
         ;;
     run)
         docker-compose up elasticsearch kibana

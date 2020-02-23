@@ -17,6 +17,16 @@ services:
             - elastic
         depends_on:
             - elasticsearch
+    filebeat:
+        image: docker.elastic.co/beats/filebeat:7.6.0
+        volumes:
+            - ./malware-traffic-analysis.net:/logs:ro
+            - ./filebeat-config/suricata.yml:/usr/share/filebeat/modules.d/suricata.yml
+        networks:
+            - elastic
+        depends_on:
+            - elasticsearch
+            - kibana
     loader:
         build: .
         volumes:
