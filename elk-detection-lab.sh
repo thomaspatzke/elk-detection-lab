@@ -8,6 +8,11 @@ case "$1" in
         docker-compose up
         rm malware-traffic-analysis.net/eve.json
         ;;
+    init-windowsonly)
+        docker-compose build
+        docker-compose up
+        rm malware-traffic-analysis.net/eve.json
+        ;;
     run)
         docker-compose up elasticsearch kibana
         ;;
